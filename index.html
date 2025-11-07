@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Imóvel - Contemplada</title>
+    <style>
+        :root {
+            --itaucolor: #ff7700;
+            --portocolor: #0055a4;
+            --santandercolor: #ec0000;
+            --contemplada-color: #2ecc71;
+            --textcolor: #333;
+            --lightgray: #f5f5f5;
+            --bordercolor: #ddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--textcolor);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .subtitle span {
+            color: var(--contemplada-color);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            padding: 15px 20px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .itaucard .card-header {
+            background-color: var(--itaucolor);
+        }
+        
+        .portocard .card-header {
+            background-color: var(--portocolor);
+        }
+        
+        .santandercard .card-header {
+            background-color: var(--santandercolor);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--bordercolor);
+        }
+        
+        th {
+            background-color: var(--lightgray);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: var(--lightgray);
+        }
+        
+        tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        
+        .highlight {
+            font-weight: bold;
+        }
+        
+        .value {
+            color: #2c5aa0;
+        }
+        
+        .obs {
+            font-style: italic;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid var(--bordercolor);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card-header {
+                font-size: 1.3rem;
+            }
+            
+            th, td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .card-header {
+                font-size: 1.2rem;
+                padding: 12px 15px;
+            }
+            
+            th, td {
+                padding: 8px 5px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Carta de Imóvel</h1>
+            <p class="subtitle">Simulação de Financiamento - <span>Contemplada</span></p>
+        </header>
+        
+        <main>
+            <!-- Itaú -->
+            <section class="card itaucard">
+                <div class="card-header">Itaú</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CRÉDITO</th>
+                                <th>ENTRADA</th>
+                                <th>PRAZO</th>
+                                <th>PARCELA</th>
+                                <th>BANCO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="value">R$ 213.000,00</td>
+                                <td class="value">R$ 139.800,00</td>
+                                <td>86</td>
+                                <td class="value">R$ 1.848,00</td>
+                                <td class="obs">ITAÚ</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 290.000,00</td>
+                                <td class="value">R$ 159.900,00</td>
+                                <td>136</td>
+                                <td class="value">R$ 2.174,00</td>
+                                <td class="obs">ITAÚ</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 366.000,00</td>
+                                <td class="value">R$ 189.800,00</td>
+                                <td>136</td>
+                                <td class="value">R$ 2.704,00</td>
+                                <td class="obs">ITAÚ</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 418.000,00</td>
+                                <td class="value">R$ 235.700,00</td>
+                                <td>120</td>
+                                <td class="value">R$ 2.832 + 28 x 1.660</td>
+                                <td class="obs">ITAÚ</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 662.000,00</td>
+                                <td class="value">R$ 383.800,00</td>
+                                <td>227</td>
+                                <td class="value">R$ 3.653 + 7 x 1.620</td>
+                                <td class="obs">ITAÚ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Porto -->
+            <section class="card portocard">
+                <div class="card-header">Porto Seguro</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CRÉDITO</th>
+                                <th>ENTRADA</th>
+                                <th>PRAZO</th>
+                                <th>PARCELA</th>
+                                <th>BANCO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="value">R$ 386.000,00</td>
+                                <td class="value">R$ 199.900,00</td>
+                                <td>143</td>
+                                <td class="value">R$ 2.472,00</td>
+                                <td class="obs">PORTO</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 415.000,00</td>
+                                <td class="value">R$ 185.900,00</td>
+                                <td>193</td>
+                                <td class="value">R$ 2.435,00</td>
+                                <td class="obs">PORTO</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 456.000,00</td>
+                                <td class="value">R$ 269.000,00</td>
+                                <td>139</td>
+                                <td class="value">R$ 2.824,00</td>
+                                <td class="obs">PORTO</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 521.000,00</td>
+                                <td class="value">R$ 272.900,00</td>
+                                <td>147</td>
+                                <td class="value">R$ 3.270,00</td>
+                                <td class="obs">PORTO</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 600.000,00</td>
+                                <td class="value">R$ 279.800,00</td>
+                                <td>187</td>
+                                <td class="value">R$ 3.987,00</td>
+                                <td class="obs">PORTO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Santander -->
+            <section class="card santandercard">
+                <div class="card-header">Santander</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CRÉDITO</th>
+                                <th>ENTRADA</th>
+                                <th>PRAZO</th>
+                                <th>PARCELA</th>
+                                <th>BANCO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="value">R$ 130.000,00</td>
+                                <td class="value">R$ 59.900,00</td>
+                                <td>118</td>
+                                <td class="value">R$ 1.219,00</td>
+                                <td class="obs">SANTANDER</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 202.000,00</td>
+                                <td class="value">R$ 96.000,00</td>
+                                <td>169</td>
+                                <td class="value">R$ 1.294,00</td>
+                                <td class="obs">SANTANDER</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 346.000,00</td>
+                                <td class="value">R$ 155.900,00</td>
+                                <td>118</td>
+                                <td class="value">R$ 3.096,00</td>
+                                <td class="obs">SANTANDER</td>
+                            </tr>
+                            <tr>
+                                <td class="value">R$ 417.000,00</td>
+                                <td class="value">R$ 185.900,00</td>
+                                <td>114</td>
+                                <td class="value">R$ 3.171,00</td>
+                                <td class="obs">SANTANDER</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Carta de Imóvel - Simulação de Financiamento</p>
+            <p>Atualizado em: <span id="current-date"></span></p>
+        </footer>
+    </div>
+    
+    <script>
+        // Adiciona a data atual no rodapé
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('pt-BR');
+        
+        // Adiciona efeito de destaque nas linhas ao passar o mouse
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+    </script>
+</body>
+</html>
